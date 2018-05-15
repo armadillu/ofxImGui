@@ -257,6 +257,7 @@ namespace ofxImGui
 	//--------------------------------------------------------------
 	void EngineGLFW::fixedDrawData(ImDrawData * draw_data)
 	{
+		if(draw_data == nullptr) return;
 		// Avoid rendering when minimized, scale coordinates for retina displays (screen coordinates != framebuffer coordinates)
 		ImGuiIO& io = ImGui::GetIO();
 		int fb_width = (int)(io.DisplaySize.x * io.DisplayFramebufferScale.x);
