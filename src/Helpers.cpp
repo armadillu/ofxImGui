@@ -736,10 +736,10 @@ bool ofxImGui::AddValues(const std::string& name, std::vector<ofVec4f>& values, 
 }
 
 //--------------------------------------------------------------
-void ofxImGui::AddImage(ofBaseHasTexture& hasTexture, const ofVec2f& size)
-{
-	ofxImGui::AddImage(hasTexture.getTexture(), size);
-}
+//void ofxImGui::AddImage(ofBaseHasTexture& hasTexture, const ofVec2f& size)
+//{
+//	ofxImGui::AddImage(hasTexture.getTexture(), size);
+//}
 
 //--------------------------------------------------------------
 void ofxImGui::AddImage(ofTexture& texture, const ofVec2f& size)

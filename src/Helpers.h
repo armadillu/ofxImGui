@@ -101,7 +101,7 @@ namespace ofxImGui
 	template<typename DataType>
 	bool AddValues(const std::string& name, std::vector<DataType>& values, DataType minValue, DataType maxValue);
 
-	void AddImage(ofBaseHasTexture& hasTexture, const ofVec2f& size);
+	//void AddImage(ofBaseHasTexture& hasTexture, const ofVec2f& size);
 	void AddImage(ofTexture& texture, const ofVec2f& size);
 }
 
