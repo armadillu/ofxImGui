@@ -134,6 +134,11 @@ namespace ofxImGui
 		if (button >= 0 && button < 5)
 		{
 			remapToGLFWConvention(button);
+
+			//prevent ctrl + left click from becoming a right click on osx!
+			if(button == 1 && ( ofGetKeyPressed(OF_KEY_CONTROL) || ofGetKeyPressed(OF_KEY_RIGHT_CONTROL))){
+				button = 0;
+			}
 			mousePressed[button] = true;
 		}
 	}
@@ -145,6 +150,10 @@ namespace ofxImGui
 		if (button >= 0 && button < 5)
 		{
 			remapToGLFWConvention(button);
+			//prevent ctrl + left click from becoming a right click on osx!
+			if(button == 1 && ( ofGetKeyPressed(OF_KEY_CONTROL) || ofGetKeyPressed(OF_KEY_RIGHT_CONTROL))){
+				button = 0;
+			}
 			mousePressed[button] = false;
 		}
 	}
