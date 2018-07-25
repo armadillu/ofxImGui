@@ -26,3 +26,4 @@ namespace ofxImGui
 		ofColor convertColor(float* f);
 	};
 }
+
