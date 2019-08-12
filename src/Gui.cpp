@@ -145,6 +145,7 @@ namespace ofxImGui
 		if (lastTime > 0.f)
 		{
 			io.DeltaTime = currentTime - lastTime;
+			if(io.DeltaTime <= 0.0f) io.DeltaTime = 1.0f / 60.0f; //imgui requires delta > 0
 		}
 		else
 		{
