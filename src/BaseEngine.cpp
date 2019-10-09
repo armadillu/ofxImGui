@@ -38,8 +38,11 @@ namespace ofxImGui
 	//--------------------------------------------------------------
 	void BaseEngine::onMousePressed(ofMouseEventArgs& event)
 	{
-		if (event.button >= 0 && event.button < 5)
-		{
+		#ifdef TARGET_OF_IOS
+		if (event.button == 0){ //on ios, only 1st finger reaches imgui
+		#else
+		if (event.button >= 0 && event.button < 5){
+		#endif
 			mousePressed[event.button] = true;
 		}
 	}
@@ -47,8 +50,11 @@ namespace ofxImGui
 	//--------------------------------------------------------------
 	void BaseEngine::onMouseReleased(ofMouseEventArgs& event)
 	{
-		if (event.button >= 0 && event.button < 5)
-		{
+		#ifdef TARGET_OF_IOS
+		if (event.button == 0){ //on ios, only 1st finger reaches imgui
+		#else
+		if (event.button >= 0 && event.button < 5){
+		#endif
 			mousePressed[event.button] = false;
 		}
 	}
