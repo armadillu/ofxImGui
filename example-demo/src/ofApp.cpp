@@ -8,6 +8,8 @@ void ofApp::setup()
     //required call
     gui.setup();
     
+    ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+    
     ImGui::GetIO().MouseDrawCursor = false;
     //backgroundColor is stored as an ImVec4 type but can handle ofColor
     backgroundColor = ofColor(114, 144, 154);
@@ -102,7 +104,7 @@ void ofApp::draw(){
     if (show_another_window)
     {
         //note: ofVec2f and ImVec2f are interchangeable
-        ImGui::SetNextWindowSize(ofVec2f(200,100), ImGuiSetCond_FirstUseEver);
+        ImGui::SetNextWindowSize(ofVec2f(200,100), ImGuiCond_FirstUseEver);
         ImGui::Begin("Another Window", &show_another_window);
         ImGui::Text("Hello");
         ImGui::End();
@@ -111,7 +113,7 @@ void ofApp::draw(){
     // 3. Show the ImGui test window. Most of the sample code is in ImGui::ShowDemoWindow()
     if (show_test_window)
     {
-        ImGui::SetNextWindowPos(ofVec2f(650, 20), ImGuiSetCond_FirstUseEver);
+        ImGui::SetNextWindowPos(ofVec2f(650, 20), ImGuiCond_FirstUseEver);
         ImGui::ShowDemoWindow(&show_test_window);
     }
     
