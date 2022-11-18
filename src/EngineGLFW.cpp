@@ -39,18 +39,6 @@ namespace ofxImGui
 		io.KeyMap[ImGuiKey_Y] = GLFW_KEY_Y;
 		io.KeyMap[ImGuiKey_Z] = GLFW_KEY_Z;
 
-		if (autoDraw)
-		{
-			if (ofIsGLProgrammableRenderer())
-			{
-				io.RenderDrawListsFn = programmableDrawData;
-			}
-			else
-			{
-				io.RenderDrawListsFn = fixedDrawData;
-			}
-		}
-
 		io.SetClipboardTextFn = &BaseEngine::setClipboardString;
 		io.GetClipboardTextFn = &BaseEngine::getClipboardString;
 

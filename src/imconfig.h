@@ -100,6 +100,7 @@ ImVec4(const ofFloatColor& f) { x = f.r; y = f.g; z = f.b; w = f.a; }           
 operator ofFloatColor() const { return ofFloatColor(x, y, z, w); }
 #endif
 
+#define IMGUI_DISABLE_OBSOLETE_FUNCTIONS
 #define ImDrawIdx ofIndexType
 
 //---- Use 32-bit vertex indices (default is 16-bit) is one way to allow large meshes with more than 64K vertices.
